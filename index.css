@@ -3,12 +3,64 @@ body {
   color: white;
 }
 
+.apps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .btn {
   cursor: pointer;
 }
 
 .clicked {
   color: #7f8c8d;
+}
+
+.center {
+  display: block;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.js-clock {
+  font-size: 1000%;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -7px;
+  user-select: none;
+}
+
+.js-greetings {
+  font-size: 333%;
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+}
+
+.todo-app {
+  height: auto;
+  width: 365px;
+  min-width: 200px;
+}
+
+.js-toDoList {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.js-toDoForm input {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .form,

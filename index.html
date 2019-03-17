@@ -2,25 +2,43 @@
 <html>
 
 <head>
-  <title>Something</title>
+  <title>Momonton</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-  <div class="js-clock">
-    <h1>00:00</h1>
+  <div class="apps">
+    <div class="center">
+      <!-- Start Clock -->
+      <div class="js-clock">
+        <span>00:00</span>
+      </div>
+      <!-- End Clock -->
+
+      <!-- Start Greetings -->
+      <form class="js-form form">
+        <input type="text" placeholder="What is your name?" />
+      </form>
+      <div class="js-greetings"></div>
+      <!-- End Greetings -->
+    </div>
+
+    <!-- Start ToDo -->
+    <div class="todo-app">
+      <form class="js-toDoForm">
+        <input type="text" placeholder="Write a To do" />
+      </form>
+      <ul class="js-toDoList">
+      </ul>
+    </div>
+    <!-- End ToDo -->
+
+    <!-- Start Weather -->
+    <span class="js-weather"></span>
+    <!-- End Weather -->
   </div>
-  <form class="js-form form">
-    <input type="text" placeholder="What is your name?" />
-  </form>
-  <h4 class="js-greetings"></h4>
-  <form class="js-toDoForm">
-    <input type="text" placeholder="Write a To do" />
-  </form>
-  <ul class="js-toDoList">
-  </ul>
-  <span class="js-weather"></span>
+
   <script src="clock.js"></script>
   <script src="greeting.js"></script>
   <script src="todo.js"></script>
