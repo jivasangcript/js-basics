@@ -1,6 +1,6 @@
-const toDoForm = document.querySelector(".js-toDoForm"),
-  toDoInput = toDoForm.querySelector("input"),
-  toDoList = document.querySelector(".js-toDoList");
+const toDoForm = document.querySelector('.js-toDoForm'),
+  toDoInput = toDoForm.querySelector('input'),
+  toDoList = document.querySelector('.js-toDoList');
 
 const TODOS_LS = 'toDos';
 
@@ -22,13 +22,13 @@ function saveToDos() {
 }
 
 function paintToDo(text) {
-  const li = document.createElement("li");
-  const delBtn = document.createElement("button");
-  const span = document.createElement("span");
+  const li = document.createElement('li');
+  const delBtn = document.createElement('button');
+  const span = document.createElement('span');
   const newId = toDos.length + 1;
 
-  delBtn.innerHTML = "❌";
-  delBtn.addEventListener("click", deleteToDo);
+  delBtn.innerHTML = '❌';
+  delBtn.addEventListener('click', deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
   li.appendChild(span);
@@ -36,8 +36,8 @@ function paintToDo(text) {
   toDoList.appendChild(li);
   const toDoObj = {
     text: text,
-    id: newId
-  }
+    id: newId,
+  };
   toDos.push(toDoObj);
   saveToDos();
 }
@@ -46,7 +46,7 @@ function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
   paintToDo(currentValue);
-  toDoInput.value = "";
+  toDoInput.value = '';
 }
 
 function loadToDos() {
@@ -61,7 +61,7 @@ function loadToDos() {
 
 function init() {
   loadToDos();
-  toDoForm.addEventListener("submit", handleSubmit)
+  toDoForm.addEventListener('submit', handleSubmit);
 }
 
 init();
