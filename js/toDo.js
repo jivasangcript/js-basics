@@ -24,16 +24,21 @@ function addToDo(text) {
   toDo.className = 'toDo';
   toDo.id = toDos.length + 1;
 
+  const label = document.createElement('label');
+  label.className = 'toDo__label';
+  label.innerText = '👉';
+
+  const span = document.createElement('span');
+  span.innerText = text;
+
   const deleteBtn = document.createElement('span');
   deleteBtn.className = 'toDo__button';
-  deleteBtn.innerHTML = '❌';
+  deleteBtn.innerHTML = '지우기';
   deleteBtn.addEventListener('click', deleteToDo);
 
-  const label = document.createElement('label');
-  label.innerText = text;
-
-  toDo.appendChild(deleteBtn);
   toDo.appendChild(label);
+  toDo.appendChild(span);
+  toDo.appendChild(deleteBtn);
   list.appendChild(toDo);
   saveToDo(text);
 }
@@ -61,7 +66,7 @@ function loadToDos() {
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach((toDo) => {
-      addToDo(toDo.text);
+      addToDo(toDo.value);
     });
   }
 }
