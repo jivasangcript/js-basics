@@ -1,4 +1,4 @@
-const weather = document.querySelector('.js-weather');
+const weather = document.querySelector('.js-weather .weather__text');
 
 const API_KEY = '27c4ca869b421bfa056f852015a2ff6e';
 const COORDS = 'coords';
@@ -7,13 +7,11 @@ function getWeather(lat, lng) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
   )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      const temperature = json.main.temp;
-      const place = json.name;
-      weather.innerText = `${temperature} @ ${place}`;
+    .then((response) => response.json())
+    .then((json) => {
+      const { name: place } = json;
+      const { temp } = json.main;
+      weather.innerText = `${Math.floor(temp)}° @ ${place}`;
     });
 }
 
@@ -22,8 +20,7 @@ function saveCoords(coords) {
 }
 
 function handleGeoSuccess(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+  const { latitude, longitude } = position.coords;
   const coords = {
     latitude,
     longitude,
@@ -33,20 +30,20 @@ function handleGeoSuccess(position) {
 }
 
 function handleGeoError() {
-  console.log("Can't access geo location");
+  console.log('위치에 접근할 권한이 없습니다.');
 }
 
-function askForCoords() {
+function getCoords() {
   navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
 function loadCoords() {
-  const loadedCoords = localStorage.getItem(COORDS);
-  if (loadedCoords === null) {
-    askForCoords();
-  } else {
-    const parsedCoords = JSON.parse(loadedCoords);
+  const currentCoords = localStorage.getItem(COORDS);
+  if (currentCoords !== null) {
+    const parsedCoords = JSON.parse(currentCoords);
     getWeather(parsedCoords.latitude, parsedCoords.longitude);
+  } else {
+    getCoords();
   }
 }
 
