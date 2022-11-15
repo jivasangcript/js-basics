@@ -1,0 +1,12 @@
+.js-weather {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: default;
+}
+
+.weather__text {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

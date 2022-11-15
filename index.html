@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <title>Motivation 동기부여</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="index.css" />
-</head>
-
-<body>
-  <div class="apps">
-    <div class="center">
-      <!-- Start Clock -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motivation 동기부여</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <section class="center-section">
       <div class="js-clock">
-        <span>00:00</span>
+        <span class="clock__text">00:00</span>
       </div>
-      <!-- End Clock -->
+      <div class="js-name"></div>
+      <div>
+        <form class="js-toDo">
+          <input
+            type="text"
+            class="js-addToDo"
+            placeholder="할 일을 작성해 보세요!"
+          />
+        </form>
+        <ul class="js-toDoList"></ul>
+      </div>
+    </section>
 
-      <!-- Start Greetings -->
-      <form class="js-form form">
-        <input type="text" placeholder="너의 이름은?" />
-      </form>
-      <div class="js-greetings"></div>
-      <!-- End Greetings -->
+    <div class="js-location">
+      <span class="location__text"></span>
     </div>
 
-    <!-- Start ToDo -->
-    <div class="todo-app">
-      <form class="js-toDoForm">
-        <input type="text" placeholder="Write a To do" />
-      </form>
-      <ul class="js-toDoList">
-      </ul>
+    <div class="js-weather">
+      <span class="weather__text"></span>
     </div>
-    <!-- End ToDo -->
 
-    <!-- Start Weather -->
-    <span class="js-weather"></span>
-    <!-- End Weather -->
-  </div>
-
-  <script src="js/bg.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/greeting.js"></script>
-  <script src="js/todo.js"></script>
-  <script src="js/weather.js"></script>
-</body>
-
+    <script src="js/background.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/toDo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
 </html>

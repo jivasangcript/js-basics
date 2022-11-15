@@ -1,0 +1,13 @@
+.js-name {
+  margin-bottom: 30px;
+}
+
+.name__input,
+.name__text {
+  font-size: 36px;
+}
+
+.name__input {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}

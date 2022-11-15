@@ -1,0 +1,11 @@
+.js-clock {
+  font-size: 10em;
+  user-select: none;
+}
+
+.clock__text {
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -7px;
+}
