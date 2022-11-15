@@ -31,7 +31,7 @@ function saveBackground(url, name, description) {
   }
 
   const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getHours() + 1);
+  expirationDate.setDate(expirationDate.getTime() + 1000 * 60 * 30);
 
   const image = {
     url,
@@ -51,7 +51,7 @@ function loadBackground() {
     const { url, name, description, expiresOn } = JSON.parse(savedImage);
     const today = new Date();
 
-    if (today.getHours() > expiresOn) {
+    if (today.getTime() > expiresOn) {
       getBackground();
     } else {
       body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${url})`;
