@@ -39,6 +39,7 @@ function handleSubmit(event) {
 
 function loadName() {
   const username = localStorage.getItem(USERNAME);
+
   if (username === null) {
     renderInput();
   } else {

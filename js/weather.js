@@ -21,10 +21,7 @@ function saveCoords(coords) {
 
 function handleGeoSuccess(position) {
   const { latitude, longitude } = position.coords;
-  const coords = {
-    latitude,
-    longitude,
-  };
+  const coords = { latitude, longitude };
   saveCoords(coords);
   getWeather(latitude, longitude);
 }
@@ -39,9 +36,10 @@ function getCoords() {
 
 function loadCoords() {
   const currentCoords = localStorage.getItem(COORDS);
+
   if (currentCoords !== null) {
-    const parsedCoords = JSON.parse(currentCoords);
-    getWeather(parsedCoords.latitude, parsedCoords.longitude);
+    const { latitude, longitude } = JSON.parse(currentCoords);
+    getWeather(latitude, longitude);
   } else {
     getCoords();
   }
